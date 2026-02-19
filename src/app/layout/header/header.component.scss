@@ -1,0 +1,112 @@
+/* ===============================
+   Navbar
+=================================*/
+
+.doc-navbar {
+    background: #233b5e;   /* Deep academic blue */
+    padding: 18px 0;
+    border-bottom: 2px solid #1b2e4b;
+  }
+  
+  /* Wrapper */
+  
+  .nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Brand */
+  
+  .brand a {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Menu */
+  
+  .menu {
+    list-style: none;
+    display: flex;
+    gap: 38px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu li {
+    position: relative;
+  }
+  
+  /* Links */
+  
+  .menu a {
+    position: relative;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    color: #e5e7eb;    /* soft white */
+    transition: color 0.3s ease;
+    padding-bottom: 6px;
+  }
+  
+  /* Hover color */
+  
+  .menu a:hover {
+    color: #f4c542;   /* Gold */
+  }
+  
+  /* Underline animation */
+  
+  .menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 3px;
+    background: #f4c542;  /* Gold underline */
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+  
+  /* Hover underline */
+  
+  .menu a:hover::after {
+    width: 100%;
+  }
+  
+  /* Active link */
+  
+  .menu a.active {
+    color: #f4c542;
+  }
+  
+  .menu a.active::after {
+    width: 100%;
+  }
+  
+  /* Responsive */
+  
+  @media (max-width: 992px) {
+    .menu {
+      gap: 22px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .nav-wrapper {
+      flex-direction: column;
+      gap: 12px;
+    }
+  
+    .menu {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+    }
+  }
+  

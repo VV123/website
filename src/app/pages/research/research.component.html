@@ -1,0 +1,138 @@
+<section class="research-section">
+
+    <div class="container">
+
+        <!-- INTRO -->
+        <div class="research-intro">
+
+            <h1 class="research-title">
+                Fish Tracking and Feeding <br />
+                Analysis
+            </h1>
+
+            <div class="subtitle-wrapper">
+                <span class="accent-line"></span>
+
+                <p class="research-subtitle">
+                    This project develops a computer-vision-based framework for automated fish size estimation and
+                    tracking. The system enables non-invasive monitoring of fish growing patterns.
+                </p>
+
+                <span class="accent-line"></span>
+            </div>
+
+            <!-- MEDIA GRID -->
+            <div class="media-grid">
+
+                <!-- Image -->
+                <div class="media-card">
+                    <div class="media-grid-wrapper">
+                        <img src="assets/Fish.png" alt="Detection Image">
+                    </div>
+                    <div class="media-caption">
+                        Green contours indicate detected and tracked fish instances in a single frame.
+                    </div>
+                </div>
+
+                <!-- Video 1 -->
+                <div class="media-card video-card"
+                    (click)="openModal('assets/fish2.mp4','Real-time Multi-Object Tracking')">
+                    <div class="media-grid-wrapper">
+                        <video #gridVideo muted autoplay loop playsinline>
+                            <source src="assets/fish2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="media-caption">
+                        Real-time multi-object fish tracking in a controlled tank environment.
+                    </div>
+                </div>
+                <!-- Image 2 -->
+                <div class="media-card">
+                    <div class="media-grid-wrapper">
+                        <img src="assets/fish3.jpg" alt="Analysis Image">
+                    </div>
+                    <div class="media-caption">
+                        Multi-Angle Fish Behavior Capture Station
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="media-card video-card" (click)="openModal('assets/left.mp4','Left Camera Angle')">
+                    <div class="media-grid-wrapper">
+                        <video #gridVideo muted autoplay loop playsinline>
+                            <source src="assets/left.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="media-caption">
+                        Fish Behavior Analysis - Left Camera Angle
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="media-card video-card" (click)="openModal('assets/right.mp4','Right Camera Angle')">
+                    <div class="media-grid-wrapper">
+                        <video #gridVideo muted autoplay loop playsinline>
+                            <source src="assets/right.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="media-caption">
+                        Fish Behavior Analysis - Right Camera Angle
+                    </div>
+                </div>
+
+                <!-- Video 4 -->
+                <div class="media-card video-card" (click)="openModal('assets/side.mp4','Side Camera Angle')">
+                    <div class="media-grid-wrapper">
+                        <video #gridVideo muted autoplay loop playsinline>
+                            <source src="assets/side.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="media-caption">
+                        Fish Behavior Analysis - Side Camera Angle
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+        <!-- FUTURE WORK -->
+        <div class="future-work">
+            <h2 class="future-title">Ongoing and Future Work</h2>
+            <div class="future-underline"></div>
+            <div class="future-item">
+                <div class="future-number">1</div>
+                <p>Data acquisition system</p>
+            </div>
+            <div class="future-item">
+                <div class="future-number">2</div>
+                <p>Monocular and stereo-based fish length estimation</p>
+            </div>
+            <div class="future-item">
+                <div class="future-number">3</div>
+                <p>Robust multi-object tracking under occlusion and varying illumination</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- MODAL -->
+<div class="modal-backdrop" [class.active]="isModalOpen" (click)="onBackdropClick($event)">
+
+    <div class="modal-box">
+
+        <div class="modal-video-area">
+            <video #modalVideo class="modal-video" controls autoplay muted playsinline *ngIf="isModalOpen"
+                [src]="modalVideoSrc">
+            </video>
+        </div>
+
+        <div class="modal-footer">
+            <span class="modal-title">{{ modalTitle }}</span>
+            <button class="modal-close" (click)="closeModal()">✕</button>
+        </div>
+
+    </div>
+</div>
